@@ -80,29 +80,39 @@ public class EmployeeDriver {
 //			}
 //		}
 		
-		Employee[] emp = new Employee[3] ;
-		for(int i=1; i<3;i++) {
-			System.out.println("Enter the details for Employee "+i+" : ");
-			String name, designation, department;
-			int age, uid, empid;
-			System.out.println("Enter Name, Age , UID:");
-			name = scan.nextLine();
-			System.out.println("Enter Age ");
-			age = scan.nextInt();
-			System.out.println("Enter Age :");
-			uid = scan.nextInt();
-			System.out.println("Enter Employee Empid, Designation, Department,  : ");
-			empid = scan.nextInt();
-			System.out.println("Enter Designation : ");
-			designation = scan.nextLine();
-			System.out.println("Enter Department : ");
-			department = scan.nextLine();
-			
-			emp[i] = new Employee(uid,name,age, empid, designation, department);
+		Employee[] emp = new Employee[3];
+
+		for(int i = 0; i < 3; i++) {
+		    System.out.println("Enter the details for Employee " + (i+1) + " : ");
+		
+		    String name, designation, department;
+		    int age, uid, empid;
+		
+		    System.out.println("Enter Name:");
+		    name = scan.nextLine();
+		
+		    System.out.println("Enter Age:");
+		    age = scan.nextInt();
+		
+		    System.out.println("Enter UID:");
+		    uid = scan.nextInt();
+		
+		    System.out.println("Enter Employee ID:");
+		    empid = scan.nextInt();
+		
+		    scan.nextLine(); // consume newline
+		
+		    System.out.println("Enter Designation:");
+		    designation = scan.nextLine();
+		
+		    System.out.println("Enter Department:");
+		    department = scan.nextLine();
+		
+		    emp[i] = new Employee(uid, name, age, empid, designation, department);
 		}
-		scan.close();
+		
 		emp[0].showOfficialDetails();
 		scan.close();
-	}
 
-}
+	}
+}	
