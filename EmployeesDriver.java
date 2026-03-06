@@ -99,15 +99,23 @@ public class EmployeesDriver {
         }
 
         // Creating threads
-        for(int i = 0; i < 3; i++){
-
-            PersonalThread t1 = new PersonalThread(emp[i]);
-            OfficialThread t2 = new OfficialThread(emp[i]);
-
-            t1.start();
-            t2.start();
+        System.out.println("Eneter the case to switch: ");
+        int case = scan.nextInt();
+        switch(case){
+            case 1: 
+                for(int i = 0; i < 3; i++){
+                    PersonalThread t1 = new PersonalThread(emp[i]);
+                    t1.start();
+                }
+                break;
+            case 2:
+                for(int i = 0; i < 3; i++){
+                    OfficialThread t2 = new OfficialThread(emp[i]);
+                    t2.start();
+                }
+                break;
+            }
         }
-
         scan.close();
     }
 }
